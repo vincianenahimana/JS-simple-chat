@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  #chatContainer {
+    width: 350px;
+    height: 500px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: space-between;
+  }
+  
+  #messagesContainer {
+    flex-grow: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styles pour les bulles de messages */
+  .message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .received {
+    background-color: #f1f1f1;
+    align-self: flex-start;
+  }
+  
+  .sent {
+    background-color: #007bff;
+    color: white;
+    align-self: flex-end;
+  }
+
+
+  #typing {
+    display: none;  /* Par défaut, on cache l'indicateur */
+    background-color: #e1e1e1;
+    color: #777;
+    padding: 8px;
+    border-radius: 20px;
+    margin-top: 10px;
+    max-width: 60%;
+    position: absolute;
+    left: 10px;
+    bottom: 70px; /* Positionné en bas à gauche du message */
+    font-style: italic;
+}
+  
