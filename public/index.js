@@ -4,7 +4,6 @@ const socket = io();
 const messageInput = document.getElementById('messageInput');
 const sendButton = document.getElementById('sendButton');
 const messagesContainer = document.getElementById('messagesContainer');
-const typing = document.getElementById('typing');
 
 // Fonction d'affichage des messages
 function displayMessage(msg, type) {
@@ -25,7 +24,7 @@ sendButton.addEventListener('click', () => {
 
         // Envoyer le message au serveur (texte uniquement)
         socket.emit('message', message);
-
+        messageInput.value=''
     }
 });
 
