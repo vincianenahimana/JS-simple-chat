@@ -8,23 +8,15 @@ const server = createServer(app);
 const io = new Server(server);
 
 // Gestion des connexions WebSocket
-io.on("connection", (socket) => {
-    console.log(`Utilisateur connecté avec l'ID : ${socket.id}`);
-
+io.on("connection", (socket) => { 
     // Recevoir et diffuser les messages
     socket.on('message', (msg) => {
         const messageData = {
             author: socket.id,
             text: msg,
         };
-        // Diffuser aux autres utilisateurs
+        // Diffuser aux autres utilisateurs en excluant bien sur
         socket.broadcast.emit('message', messageData);
-        console.log(`Message diffusé: ${msg}`);
-    });
-
-    // Déconnexion d'un utilisateur
-    socket.on('disconnect', () => {
-        console.log(`Utilisateur déconnecté : ${socket.id}`);
     });
 });
 
